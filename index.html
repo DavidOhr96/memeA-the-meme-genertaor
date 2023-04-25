@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>memeA-the meme generator</title>
+</head>
+
+<body onload="onInit()">
+    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+<canvas width="400" height="400" id="my-canvas"></canvas>
+
+
+    <script src="js/utils/dataService.js"></script>
+    <script src="js/utils/utils.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>
