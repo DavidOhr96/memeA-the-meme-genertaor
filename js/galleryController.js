@@ -13,3 +13,5 @@ function onSelectImg(id){
     console.log(id, 'hey')
     setImg(id)
 }
+
+

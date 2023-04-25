@@ -17,6 +17,16 @@ let gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
+            xcordinate:0,
+            ycordinate:0,
+            txt: 'I sometimes eat Falafel',
+            size: 20,
+            align: 'left',
+            color: 'red'
+        },
+        {
+            xcordinate:80,
+            ycordinate:80,
             txt: 'I sometimes eat Falafel',
             size: 20,
             align: 'left',
@@ -35,8 +45,9 @@ src:"meme-imgs (square)/10.jpg",
 id:11,
 src:"meme-imgs (square)/11.jpg",
 },
-
 ]
+
+g
 ////////////////////////////////// functions//////////////////////////////
 function onInit() {
     gElCanvas = document.getElementById('my-canvas')
@@ -51,18 +62,24 @@ function loadMeme() {
     elImg.src = `meme-imgs (square)/${gMeme.selectedImgId}.jpg`
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(`${gMeme.lines[0].txt}`, 50, 50)
+        gMeme.lines.forEach((line,idx)=>{
+            drawText(line.txt,idx)
+        }
+            )
     }
 
 }
 
-function drawText(text, x, y) {
-    gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'brown'
+function drawText(text,idx) {
+
+    // gCtx.lineWidth = 2
+    x=gMeme.lines[idx].xcordinate
+    y=gMeme.lines[idx].ycordinate
+    gCtx.strokeStyle = gMeme.lines[0].color
     gCtx.fillStyle = 'black'
-    gCtx.font = '40px Arial'
-    gCtx.textAlign = 'center'
-    gCtx.textBaseline = 'middle'
+    gCtx.font = `${gMeme.lines[0].size}px Arial`
+    gCtx.textAlign = 'left'
+    gCtx.textBaseline = 'top'
 
     gCtx.fillText(text, x, y) // Draws (fills) a given text at the given (x, y) position.
     gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
@@ -75,4 +92,12 @@ function setImg(id){
 gMeme.selectedImgId=id
 renderMeme()
 
+}
+
+function ChangeFontSize(val){
+    gMeme.lines[0].size+=val
+
+}
+function ChangeColor(color){
+    gMeme.lines[0].color=color
 }

@@ -10,9 +10,12 @@
 </head>
 
 <body onload="onInit()">
-    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+    <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
 <canvas width="400" height="400" id="my-canvas"></canvas>
-<button onclick="renderMeme()">click</button>
+<button onclick="renderMeme()">render meme</button>
+<button onclick="onChangeFontSize(1)">increase</button>
+<button onclick="onChangeFontSize(-1)">decrease</button>
+<input type="color" name="text-color" onchange="onChangeColor()">
 
 <input name="my-line" type="text" onchange="onSetLineTxt(event)">
 <div class="gallery"></div>

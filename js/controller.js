@@ -11,3 +11,13 @@ elInput.value=''
     renderMeme()
 }
 
+function onChangeFontSize(val){
+    ChangeFontSize(val)
+    renderMeme()
+}
+function onChangeColor(){
+    const color=document.querySelector('[name=text-color]').value
+    ChangeColor(color)
+    renderMeme()
+
+}
