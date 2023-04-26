@@ -13,6 +13,7 @@ let gKeywordSearchCountMap = {
 // }];
 const gStickers=['😀','😁','😂','🤣','😃','😄','😅','😆','😉','😊','😋','😎','😍','😘','🥰','😗']
 let gStickersOnScreen=[]
+
 let gMeme = {
     selectedImgId: 6,
     selectedLineIdx: 0,
@@ -39,7 +40,7 @@ let gMeme = {
         }
     ]
 }
-const gImgs = [
+let gImgs = [
     {
         keywords: ['obama'],
         id: 1,
@@ -144,7 +145,9 @@ function onInit() {
 }
 function loadMeme() {
     const elImg = new Image()
-    elImg.src = `meme-imgs (square)/${gMeme.selectedImgId}.jpg`
+    // elImg.src = `meme-imgs (square)/${gMeme.selectedImgId}.jpg`
+    console.log(gImgs[gMeme.selectedImgId-1].src)
+    elImg.src = `${gImgs[gMeme.selectedImgId-1].src}`
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         gMeme.lines.forEach((line, idx) => {
@@ -156,11 +159,7 @@ function loadMeme() {
         }
         )
     }
-    
-
-
 }
-
 function drawText(text, strokeColor,fillColor,font, size, idx) {
 
     // gCtx.lineWidth = 2
