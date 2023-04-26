@@ -10,15 +10,53 @@
 </head>
 
 <body onload="onInit()">
-    <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
-<canvas width="400" height="400" id="my-canvas"></canvas>
-<button onclick="renderMeme()">render meme</button>
-<button onclick="onChangeFontSize(1)">increase</button>
-<button onclick="onChangeFontSize(-1)">decrease</button>
-<input type="color" name="text-color" onchange="onChangeColor()">
+    <h1>memeA-The meme generator</h1>
+    <div class="main">
+        <div class="canvas-container">
+            <canvas width="400" height="400" id="my-canvas"></canvas>
+        </div>
 
-<input name="my-line" type="text" onchange="onSetLineTxt(event)">
-<div class="gallery"></div>
+        <div class="button-panel">
+            <label for="my-line">Write sentence:</label>
+            <input name="my-line" type="text" onchange="onSetLineTxt(event)">
+            <div class="first button-set">
+                <button onclick="onMoveText(-5)">line up</button>
+                <button onclick="onMoveText(5)">line down</button>
+                <button onclick="onChangeLine()">change line</button>
+                <button onclick="onAddLine()">add line</button>
+                <button onclick="onDeleteLine()">delete button </button>
+            </div>
+            <div class="second button-set">
+                <button onclick="onChangeFontSize(1)">increase</button>
+                <button onclick="onChangeFontSize(-1)">decrease</button>
+                <button onclick="onChangeAlign('left')">align left</button>
+                <button onclick="onChangeAlign('center')">align center</button>
+                <button onclick="onChangeAlign('right')">align right</button>
+            </div>
+            <div class="third button-set">
+                <select onchange="onChangeFont()">
+                    <option>Impact</option>
+                    <option>Arial</option>
+                </select>
+                <input type="color" name="stroke-color" onchange="onChangeStrokeColor()">
+                <input type="color" value="#FFFFFF" name="fill-color" onchange="onChangeFillColor()">
+            </div>
+            <div class="sticker-container">
+                
+            </div>
+
+
+
+
+
+            <button onclick="renderMeme()">render meme</button>
+
+            <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+        </div>
+    </div>
+    <div class="gallery"></div>
+
+    <!---------------------- scripts --------------------------------->
     <script src="js/utils/dataService.js"></script>
     <script src="js/utils/utils.js"></script>
     <script src="js/service.js"></script>

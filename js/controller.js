@@ -1,23 +1,67 @@
 'use service'
-function renderMeme(){
+function renderMeme() {
     loadMeme()
 }
-function onSetLineTxt(ev){
-    
-const elInput=document.querySelector('[name=my-line]')
-const str=elInput.value
-elInput.value=''
+function onSetLineTxt() {
+
+    const elInput = document.querySelector('[name=my-line]')
+    const str = elInput.value
+    elInput.value = ''
     setLineTxt(str)
     renderMeme()
 }
 
-function onChangeFontSize(val){
-    ChangeFontSize(val)
+function onChangeFontSize(val) {
+    changeFontSize(val)
     renderMeme()
 }
-function onChangeColor(){
-    const color=document.querySelector('[name=text-color]').value
-    ChangeColor(color)
+function onChangeStrokeColor() {
+    const color = document.querySelector('[name=stroke-color]').value
+    changeStrokeColor(color)
     renderMeme()
+}
+function onChangeFillColor() {
+    const color = document.querySelector('[name=fill-color]').value
+    changeFillColor(color)
+    renderMeme()
+}
 
+function onChangeLine() {
+    switchLine()
+}
+
+function onMoveText(value) {
+    moveText(value)
+    renderMeme()
+}
+function onAddLine() {
+    addLine()
+    renderMeme()
+}
+function onDeleteLine() {
+    deleteLine()
+    renderMeme()
+}
+function onChangeAlign(align){
+    changeAlign(align)
+    renderMeme()
+}
+function onChangeFont(){
+  const val=document.querySelector('select').value
+  changeFont(val)
+  renderMeme()
+}
+
+function renderStickers(){
+    const elStickerContainer=document.querySelector('.sticker-container')
+    const stickers=getStickers()
+    
+    let HTMLstr=stickers.map((sticker,idx)=>{
+        return `<div class=sticker onclick=onAddSticker(${idx})> ${sticker}</div>`
+    }).join('')
+elStickerContainer.innerHTML=HTMLstr
+}
+function onAddSticker(idx){
+    addSticker(idx)
+    renderMeme()
 }
