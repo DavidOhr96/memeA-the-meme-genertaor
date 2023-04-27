@@ -9,29 +9,28 @@
     <title>memeA-the meme generator</title>
 </head>
 
-<body  onload="onInit()">
+<body onload="onInit()">
     <div class="main-screen" onclick="onToggleMenu()"></div>
     <header>
-        <img  class ="logo" src="icons/memeAlogo.jpg">
-        <img onclick="onToggleMenu()" class= "hamburger" src="icons/menu-icon.svg">
+        <img class="logo" src="icons/memeAlogo.jpg">
+        <img onclick="onToggleMenu()" class="hamburger" src="icons/menu-icon.svg">
         <span></span>
         <nav class="main-nav-container">
             <ul class="main-nav flex clean-list">
-                
-                    <li>Gallery</li>
-                    <li>My memes</li>
-                    <li>About</li>
-                
+
+                <li>Gallery</li>
+                <li>My memes</li>
+                <li>About</li>
+
             </ul>
         </nav>
-       
+
     </header>
     <main>
         <div class="canvas-container">
             <canvas width="400" height="400" id="my-canvas"></canvas>
         </div>
         <div class="button-panel">
-            <label for="my-line">Write sentence:</label>
             <input placeholder="Edit text" name="my-line" type="text" oninput="onSetLineTxt(event)">
             <div class="first button-set">
                 <button onclick="onMoveText(-5)">line up</button>
@@ -58,11 +57,14 @@
                 </div>
             </div>
             <div class="sticker-container"></div>
-            <button onclick="onUploadImg()">share on FB</button>
-            <a href="#" class="btn" onclick="onDownload(this)" download="my-img.jpg">Download as jpeg</a>
-            <button onclick="renderMeme()">render meme</button>
+            <div class="fourth button-set">
+                <button class="share-on-FB" onclick="onUploadImg()"><img src=icons/Share.png><img src=icons/Forme_7.png></button>
+                <a href="#" id="upload" class="download" onclick="onDownload(this)" download="my-img.jpg"><img
+                        src=icons/Download.png><img src=icons/Forme_8.png> </a>
+                <!-- <button onclick="renderMeme()">render meme</button> -->
 
-            <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+                <input type="file" class="upload" name="image" onchange="onImgInput(event)" />
+            </div>
 
         </div>
     </main>

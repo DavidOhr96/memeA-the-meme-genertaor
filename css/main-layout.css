@@ -59,8 +59,8 @@ column-count:3;
 
     justify-self: center;
     align-self: center;
-
-
-
-
+}
+.search-bar{
+    font-size:30px ;
+    color:#757575
 }

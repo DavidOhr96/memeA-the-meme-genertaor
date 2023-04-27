@@ -1,14 +1,23 @@
 header{
     display:flex;
     justify-content: space-between;
+    
 }
 
 .hamburger{
     height:50px ;
     align-self: center;
+    grid-column: 2;
 }
 header span{
     display: none;
+}
+li{
+    list-style: none;
+    font-size: 30px;
+    color:#18a4a0;
+    padding:10px
+    
 }
 
 @media (max-width: 900px) {
@@ -17,7 +26,8 @@ header span{
         top: 0;
         right: 0;
         height: 100vh;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #22252c;
+     
         border-inline-start: 1px solid #ccc;
         min-width: 200px;
 

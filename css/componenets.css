@@ -14,11 +14,13 @@
     padding: 40px;
     border-radius: 30px;
 }
+
 button img {
     margin: auto;
     /* width: 30px;
     height: 26px; */
 }
+
 .button-set {
     display: flex;
     justify-content: space-around;
@@ -30,6 +32,7 @@ button img {
     border-radius: 15px;
     background-color: #19a59f;
 }
+
 .button-set>* {
     width: 58px;
     height: 53px;
@@ -41,6 +44,7 @@ button img {
 .button-set>*:hover {
     cursor: pointer
 }
+
 .second>*,
 .third>* {
     box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
@@ -53,7 +57,6 @@ input[name="my-line"] {
     height: 57px;
     box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
     border-radius: 28px;
-    font-size:  20px;
 }
 .font-selector{
     width: 225px;
@@ -98,38 +101,35 @@ background-color: #ffffff;
 
 
 }
-.font-selector{
-    font-size:25px ;
+
+.gallery img{
+    margin: auto;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    background-color: #383b42;
+    
+}
+.search-bar{
+    width: 609px;
+height: 70px;
+border-radius: 29px;
+background-color: #22252c;
+border: 0px;
+}
+img {
+    display: block;
+    max-width: 280px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+
+}
+.sticker-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.sticker{
-    font-size:20px;
-}
-.fourth >*{
-width: 180px;
-height: 51px;
-/* display: flex; */
-align-content: center;
-justify-content: space-around;
-margin: 9px;
-display:flex
-}
-.share-on-FB{
-    background-color:#1e7cd3 ;
-    box-shadow: 1px 6px 0 #165c9c, inset 0 5px 0 #1c90c6;
-}
-.download{
-    background-color:#8f44bb ;
-    box-shadow: 1px 6px 0 #632687, inset 0 5px 0 #f5cef7;
-}
-.download >*{
-    align-self: center;
-    max-height: 17px;
-    max-width: 90px;
-}
-.upload{
-    background-color: #009F8E;
-    align-items: center;
-    box-shadow: 1px 6px 0 #015f55, inset 0 5px 0 #86ddd4;
-
+.sticker-container:hover {
+    cursor: pointer;
 }
