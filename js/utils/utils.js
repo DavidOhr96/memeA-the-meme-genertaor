@@ -78,3 +78,22 @@ function doUploadImg(imgDataUrl, onSuccess) {
     XHR.open('POST', '//ca-upload.com/here/upload.php')
     XHR.send(formData)
 }
+function resizeCanvas(elImg) {
+    const elContainer = document.querySelector('.canvas-container')
+    // Note: changing the canvas dimension this way clears the canvas
+    // gElCanvas.width = elContainer.offsetWidth - 20
+    // Unless needed, better keep height fixed.
+    // gElCanvas.height = elContainer.offsetHeight -20
+    const width = elImg.width;
+    const height = elImg.height;
+   
+    const ratioa =elImg.height * elContainer.offsetWidth
+    const ratiob=ratioa/elImg.width
+    gElCanvas.height =ratiob
+    gElCanvas.width =400
+    console.log(ratioa,ratiob)
+    // gElCanvas.height =(( elImg.height * elContainer.offsetWidth )/elImg.width)
+    // const width = elImg.width;
+    // var height = elImg.height;
+    // console.log(elImg, width, height)
+}

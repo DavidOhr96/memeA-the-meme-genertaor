@@ -1,6 +1,6 @@
 'use strict'
 function renderGallery(){
-    let elGallery= document.querySelector('.gallery')
+    let elGallery= document.querySelector('.gallery span')
 // elGallery.innerHTML=`<img src="meme-imgs (square)/10.jpg ">
 //     <img src="meme-imgs (square)/11.jpg">`
 elGallery.innerHTML=gImgs.map(img=>{
@@ -10,6 +10,9 @@ elGallery.innerHTML=gImgs.map(img=>{
 }
 function onSelectImg(id){
     setImg(id)
+    document.querySelector('.gallery').style.display='none'
+    document.querySelector('main').style.display='flex'
+    window.scrollTo(0,0); 
 }
 
 

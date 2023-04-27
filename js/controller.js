@@ -3,12 +3,13 @@ function renderMeme() {
     loadMeme()
 }
 function onSetLineTxt() {
-
+    // elInput.value =''
     const elInput = document.querySelector('[name=my-line]')
     const str = elInput.value
-    elInput.value = ''
+
     setLineTxt(str)
     renderMeme()
+    
 }
 
 function onChangeFontSize(val) {
@@ -28,6 +29,10 @@ function onChangeFillColor() {
 
 function onChangeLine() {
     switchLine()
+    str=getLine()
+    elInput = document.querySelector('[name=my-line]')
+    elInput.value=str
+    renderMeme()
 }
 
 function onMoveText(value) {
@@ -64,4 +69,11 @@ elStickerContainer.innerHTML=HTMLstr
 function onAddSticker(idx){
     addSticker(idx)
     renderMeme()
+}
+function onDownload(elLink){
+    downloadImg(elLink)
+}
+
+function onToggleMenu() {
+    document.body.classList.toggle('menu-open');
 }

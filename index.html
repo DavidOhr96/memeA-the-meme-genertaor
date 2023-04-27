@@ -9,47 +9,69 @@
     <title>memeA-the meme generator</title>
 </head>
 
-<body onload="onInit()">
-    <h1>memeA-The meme generator</h1>
-    <div class="main">
+<body  onload="onInit()">
+    <div class="main-screen" onclick="onToggleMenu()"></div>
+    <header>
+        <img  class ="logo" src="icons/memeAlogo.jpg">
+        <img onclick="onToggleMenu()" class= "hamburger" src="icons/menu-icon.svg">
+        <span></span>
+        <nav class="main-nav-container">
+            <ul class="main-nav flex clean-list">
+                
+                    <li>Gallery</li>
+                    <li>My memes</li>
+                    <li>About</li>
+                
+            </ul>
+        </nav>
+       
+    </header>
+    <main>
         <div class="canvas-container">
             <canvas width="400" height="400" id="my-canvas"></canvas>
         </div>
-
         <div class="button-panel">
             <label for="my-line">Write sentence:</label>
-            <input name="my-line" type="text" onchange="onSetLineTxt(event)">
+            <input placeholder="Edit text" name="my-line" type="text" oninput="onSetLineTxt(event)">
             <div class="first button-set">
                 <button onclick="onMoveText(-5)">line up</button>
                 <button onclick="onMoveText(5)">line down</button>
-                <button onclick="onChangeLine()">change line</button>
-                <button onclick="onAddLine()">add line</button>
-                <button onclick="onDeleteLine()">delete line</button>
+                <button class="change-line" onclick="onChangeLine()"><img src="icons/switch-line.png"></button>
+                <button class="add-line" onclick="onAddLine()"><img src="icons/add-line.png"></button>
+                <button class="delete-line" onclick="onDeleteLine()"><img src="icons/delete-line.png"></button>
             </div>
-            <div class="second button-set">
-                <button onclick="onChangeFontSize(1)">increase</button>
-                <button onclick="onChangeFontSize(-1)">decrease</button>
-                <button onclick="onChangeAlign('left')">align left</button>
-                <button onclick="onChangeAlign('center')">align center</button>
-                <button onclick="onChangeAlign('right')">align right</button>
+            <div class="wraper">
+                <div class="second button-set">
+                    <button onclick="onChangeFontSize(1)"><img src="icons/increase.png"></button>
+                    <button onclick="onChangeFontSize(-1)"><img src="icons/decrease-font.png"></button>
+                    <button onclick="onChangeAlign('left')"><img src="icons/align-left.png"></button>
+                    <button onclick="onChangeAlign('center')"><img src="icons/align-center.png"></button>
+                    <button onclick="onChangeAlign('right')"><img src="icons/align-right.png"></button>
+                </div>
+                <div class="third button-set">
+                    <select class="font-selector" onchange="onChangeFont()">
+                        <option>Impact</option>
+                        <option>Arial</option>
+                    </select>
+                    <input type="color" name="stroke-color" placeholder="😀" onchange="onChangeStrokeColor()">
+                    <input type="color" value="#FFFFFF" name="fill-color" onchange="onChangeFillColor()">
+                </div>
             </div>
-            <div class="third button-set">
-                <select onchange="onChangeFont()">
-                    <option>Impact</option>
-                    <option>Arial</option>
-                </select>
-                <input type="color" name="stroke-color" onchange="onChangeStrokeColor()">
-                <input type="color" value="#FFFFFF" name="fill-color" onchange="onChangeFillColor()">
-            </div>
-            <div class="sticker-container"></div> 
+            <div class="sticker-container"></div>
             <button onclick="onUploadImg()">share on FB</button>
-
+            <a href="#" class="btn" onclick="onDownload(this)" download="my-img.jpg">Download as jpeg</a>
             <button onclick="renderMeme()">render meme</button>
 
             <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+
         </div>
+    </main>
+    <div class="gallery">
+        <div class="search-bar-conatiner">
+            <input placeholder="Search" class="search-bar" type="text">
+        </div>
+        <span></span>
     </div>
-    <div class="gallery"></div>
 
     <!---------------------- scripts --------------------------------->
     <script src="js/utils/dataService.js"></script>

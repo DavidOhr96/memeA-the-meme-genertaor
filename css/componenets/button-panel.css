@@ -1,0 +1,99 @@
+.button-panel {
+
+    /* position: absolute; */
+    /* left: 410px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 525px;
+    /* grid-column: 2; */
+    /* border: red solid 1px; */
+    align-self: center;
+    margin-bottom: 100px;
+    background-color: #383b42;
+    padding: 40px;
+    border-radius: 30px;
+}
+button img {
+    margin: auto;
+    /* width: 30px;
+    height: 26px; */
+}
+.button-set {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
+.wraper{
+    width: 445px;
+    height: 151px;
+    border-radius: 15px;
+    background-color: #19a59f;
+}
+.button-set>* {
+    width: 58px;
+    height: 53px;
+    border-radius: 10px;
+
+
+}
+
+.button-set>*:hover {
+    cursor: pointer
+}
+.second>*,
+.third>* {
+    box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+input[name="my-line"] {
+    width: 445px;
+    height: 57px;
+    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+    border-radius: 28px;
+}
+.font-selector{
+    width: 225px;
+height: 50px;
+box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+border-radius: 10px;
+background-color: #ffffff;
+}
+
+.add-line {
+    background-color: #3ccf53;
+    box-shadow: 1px 5px 0 #015d33, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+}
+
+.add-line img {
+    width: 27px;
+    height: 27px;
+}
+
+.change-line {
+    background-color: #42b2cf;
+    box-shadow: 1px 5px 0 #048b97, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+}
+
+.change-line img {
+    width: 39px;
+    height: 28px;
+
+}
+
+
+
+.delete-line {
+    background-color: #d92d36;
+    box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+
+}
+
+.delete-line img {
+    width: 28px;
+    height: 32px;
+
+
+}
