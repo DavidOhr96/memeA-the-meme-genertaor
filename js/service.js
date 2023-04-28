@@ -13,7 +13,7 @@ let gKeywordSearchCountMap = {
 // }];
 const gStickers = ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '🥰', '😗']
 let gStickersOnScreen = []
-var gMeme = {
+let gMeme = {
     selectedImgId: 6,
     selectedLineIdx: 0,
     lines: [
@@ -220,7 +220,8 @@ function drawText(text, strokeColor, fillColor, font, size, idx) {
 }
 function setLineTxt(str) {
     gMeme.lines[gMeme.selectedLineIdx].txt = str
-    gMeme.lines[gMeme.selectedLineIdx].xcordinate = _getXcordinate(gMeme.selectedLineIdx)
+    gMeme.lines[gMeme.selectedLineIdx].xcordinate = _getXcordinateSelectedLine(gMeme.selectedLineIdx)
+    console.log(gMeme.selectedLineIdx)
 }
 
 function setImg(id) {
@@ -297,7 +298,13 @@ function downloadImg(elLink) {
 
 function _getXcordinate(idx) {
     const width =(gElCanvas.width/2)-(gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width*1.5)
+    console.log(idx,'lala')
     gMeme.lines[idx].xcordinate=width
+}
+function _getXcordinateSelectedLine(idx) {
+    const width =(gElCanvas.width/2)-(gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width*1.5)
+    console.log(idx,'lala')
+    return width
 }
 
 function _getYcordinate(idx) {
@@ -314,12 +321,13 @@ function _getYcordinate(idx) {
 //         break
 // }
 gMeme.lines[idx].ycordinate= gElCanvas.height-x
-console.log(gMeme.lines[idx].ycordinate, idx,"of index")
-    return 
+// console.log(gMeme.lines[idx].ycordinate, idx,"of index")
 }
 
 function setCordinates(idx){
-    _getXcordinate(idx)
+gMeme.lines[idx].xcordinate=(gElCanvas.width/2)-(gCtx.measureText(gMeme.lines[idx].txt).width*1.5)
+
+    // _getXcordinate(idx)
     _getYcordinate(idx)
 
 }

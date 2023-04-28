@@ -5,7 +5,7 @@ header{
 }
 
 .hamburger{
-    height:50px ;
+    height:40px ;
     align-self: center;
     grid-column: 2;
 }

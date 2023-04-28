@@ -1,19 +1,4 @@
-.button-panel {
 
-    /* position: absolute; */
-    /* left: 410px; */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 525px;
-    /* grid-column: 2; */
-    /* border: red solid 1px; */
-    align-self: center;
-    margin-bottom: 100px;
-    background-color: #383b42;
-    padding: 40px;
-    border-radius: 30px;
-}
 
 button img {
     margin: auto;

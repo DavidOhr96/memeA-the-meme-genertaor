@@ -1,10 +1,7 @@
 .button-panel {
-
-    /* position: absolute; */
-    /* left: 410px; */
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90vw;
     max-width: 525px;
     /* grid-column: 2; */
     /* border: red solid 1px; */
@@ -14,6 +11,7 @@
     padding: 40px;
     border-radius: 30px;
 }
+
 button img {
     margin: auto;
     /* width: 30px;
@@ -25,7 +23,8 @@ button img {
     margin: 15px;
 }
 .wraper{
-    width: 445px;
+    width:100%;
+    max-width: 445px;
     height: 151px;
     border-radius: 15px;
     background-color: #19a59f;
@@ -49,7 +48,8 @@ button img {
 }
 
 input[name="my-line"] {
-    width: 445px;
+    width:100%;
+   max-width: 445px;
     height: 57px;
     box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
     border-radius: 28px;
@@ -105,13 +105,20 @@ background-color: #ffffff;
 .sticker{
     font-size:20px;
 }
+.fourth{
+    width:100%;
+    max-width: 445px;
+    margin:0px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
 .fourth >*{
-width: 180px;
+    width:180px;
+max-width:90% ;
 height: 51px;
-/* display: flex; */
 align-content: center;
 justify-content: space-around;
-margin: 9px;
+margin: 7px;
 display:flex
 }
 .share-on-FB{
@@ -128,8 +135,17 @@ display:flex
     max-width: 90px;
 }
 .upload{
+
     background-color: #009F8E;
     align-items: center;
     box-shadow: 1px 6px 0 #015f55, inset 0 5px 0 #86ddd4;
 
+}
+.sticker-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sticker-container:hover {
+    cursor: pointer;
 }

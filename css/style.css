@@ -2,4 +2,6 @@
 @import url(main-layout.css);
 @import url(componenets/componenets.css);
 @import url(componenets/tool-bar.css);
-@import url(componenets/button-panel.css)
+@import url(componenets/button-panel.css);
+@import url(componenets/canvas.css);
+@import url(componenets/gallery.css);

@@ -29,9 +29,9 @@ function onChangeFillColor() {
 
 function onChangeLine() {
     switchLine()
-    str=getLine()
     elInput = document.querySelector('[name=my-line]')
-    elInput.value=str
+    str=getLine()
+    elInput.value=(str==='Edit text')?'':str
     renderMeme()
 }
 
