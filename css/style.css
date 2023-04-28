@@ -1,7 +1,13 @@
-
+/* ---------------------------main layout------------------------ */
 @import url(main-layout.css);
+
+/* ----------------------------componenets----------------------- */
+
 @import url(componenets/componenets.css);
 @import url(componenets/tool-bar.css);
 @import url(componenets/button-panel.css);
 @import url(componenets/canvas.css);
 @import url(componenets/gallery.css);
+
+/* --------------------------media querys------------------------ */
+@import url(mq/mq.css);

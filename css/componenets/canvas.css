@@ -1,4 +1,3 @@
-
 .canvas-container {
     display: flex;
     background-color: #22252c;
@@ -7,8 +6,9 @@
     align-items: center;
     justify-content: center;
     width: 90vw;
-    /* margin-bottom: 20px; */
+    max-width: 400px;
     margin: 0px 10px 20px;
+    align-self: center;
 }
 
 canvas {

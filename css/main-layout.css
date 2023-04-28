@@ -2,21 +2,17 @@
     box-sizing: border-box;
 }
 
-
 body {
     display: grid;
     grid-template-columns: 1fr 90% 1fr;
-    /* grid-template-rows: 100px 1fr; */
     background-color: #22252c;
-    margin:0;
-
+    margin: 0;
 }
 
 header {
     grid-column: 1/-1;
     width: auto;
     height: 73px;
-    /* border-radius: 37px; */
     background-color: #5970c1;
     background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
     margin-bottom: 20px;
@@ -29,4 +25,3 @@ main {
     justify-self: center;
     align-self: center;
 }
-

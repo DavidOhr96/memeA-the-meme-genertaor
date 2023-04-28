@@ -1,5 +1,7 @@
-// 'use strict'
+'use strict'
+
 ////////////////////////////////// vars////////////////////////////////////////
+
 let gElCanvas = document.getElementById('my-canvas')
 let gCtx = gElCanvas.getContext('2d')
 let gKeywordSearchCountMap = {
@@ -11,7 +13,14 @@ let gKeywordSearchCountMap = {
 //     keywords: ['funny', 'cat']
 
 // }];
-const gStickers = ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '🥰', '😗']
+const gStickers = [
+    '😀', '😁', '😂',
+    '🤣', '😃', '😄',
+    '😅', '😆', '😉',
+    '😊', '😋', '😎',
+    '😍', '😘', '🥰',
+    '😗'
+]
 let gStickersOnScreen = []
 let gMeme = {
     selectedImgId: 6,
@@ -167,31 +176,26 @@ let gImgs = [
         src: "meme-imgs (various aspect ratios)/25.jpg",
     },
 ]
+let gUseCountOfY
 
 ////////////////////////////////// functions//////////////////////////////
+
 function onInit() {
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
-    // resizeCanvas()
-    console.log('accesing monitor not good!!!')
     renderGallery()
-    gMeme.lines.forEach((line,idx)=> setCordinates(idx))
     renderMeme()
     renderStickers()
-    
-    
-    
-    // window.addEventListener('resize', resizeCanvas)
 }
 function loadMeme() {
     const elImg = new Image()
-    // elImg.src = `meme-imgs (square)/${gMeme.selectedImgId}.jpg`
-    console.log(gImgs[gMeme.selectedImgId - 1])
     elImg.src = `${gImgs[gMeme.selectedImgId - 1].src}`
     elImg.onload = () => {
         resizeCanvas(elImg)
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        gMeme.lines.forEach((line,idx)=>setCordinates(idx))
+        for (gUseCountOfY; gUseCountOfY < 2; gUseCountOfY++) {
+            gMeme.lines.forEach((line, idx) => setCordinates(idx))
+        }
         gMeme.lines.forEach((line, idx) => {
             drawText(line.txt, line.strokeColor, line.fillColor, line.font, line.size, idx)
         }
@@ -202,13 +206,10 @@ function loadMeme() {
         )
 
     }
-
 }
 function drawText(text, strokeColor, fillColor, font, size, idx) {
-
-    // gCtx.lineWidth = 2
-    x = gMeme.lines[idx].xcordinate
-    y = gMeme.lines[idx].ycordinate
+   let x = gMeme.lines[idx].xcordinate
+    let y = gMeme.lines[idx].ycordinate
     gCtx.strokeStyle = strokeColor
     gCtx.fillStyle = fillColor
     gCtx.font = `${size}px ${font}`
@@ -223,13 +224,11 @@ function setLineTxt(str) {
     gMeme.lines[gMeme.selectedLineIdx].xcordinate = _getXcordinateSelectedLine(gMeme.selectedLineIdx)
     console.log(gMeme.selectedLineIdx)
 }
-
 function setImg(id) {
     gMeme.selectedImgId = id
+    gUseCountOfY = 0
     renderMeme()
-
 }
-
 function changeFontSize(val) {
     gMeme.lines[gMeme.selectedLineIdx].size += val
 
@@ -240,7 +239,6 @@ function changeStrokeColor(strokeColor) {
 function changeFillColor(fillColor) {
     gMeme.lines[gMeme.selectedLineIdx].fillColor = fillColor
 }
-
 function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx < gMeme.lines.length - 1) ? gMeme.selectedLineIdx + 1 : 0
 }
@@ -250,9 +248,9 @@ function moveText(value) {
 function addLine() {
     gMeme.lines.push(
         {
-            xcordinate: (gElCanvas.width/2)-80,
-            ycordinate: (gElCanvas.height/2)-30,
-            txt: 'im a third line',
+            xcordinate: (gElCanvas.width / 2) - 80,
+            ycordinate: (gElCanvas.height / 2) - 30,
+            txt: 'Edit text',
             font: 'Impact',
             size: 30,
             align: 'left',
@@ -289,49 +287,35 @@ function addSticker(idx) {
 function placeSticker(sticker, x, y, idx) {
     gCtx.fillText(sticker, x, y)
 }
-
 function downloadImg(elLink) {
     console.log('hey')
     const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
 }
-
 function _getXcordinate(idx) {
-    const width =(gElCanvas.width/2)-(gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width*1.5)
-    console.log(idx,'lala')
-    gMeme.lines[idx].xcordinate=width
+    const width = (gElCanvas.width / 2) - (gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width * 1.5)
+    console.log(idx, 'lala')
+    gMeme.lines[idx].xcordinate = width
 }
 function _getXcordinateSelectedLine(idx) {
-    const width =(gElCanvas.width/2)-(gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width*1.5)
-    console.log(idx,'lala')
+    const width = (gElCanvas.width / 2) - (gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width * 1.5)
+    console.log(idx, 'lala')
     return width
 }
-
 function _getYcordinate(idx) {
-    console.log(gElCanvas.height, 'gElCanvas.height')
     let x
-    x=(idx)?30:gElCanvas.height
-// switch (idx) {
-//     case 0:
-//         x=gElCanvas.height
-//         break;
-
-//     case 1:
-//         x=30
-//         break
-// }
-gMeme.lines[idx].ycordinate= gElCanvas.height-x
-// console.log(gMeme.lines[idx].ycordinate, idx,"of index")
+    if (idx === 0 || idx === 1) {
+        console.log(gElCanvas.height, 'gElCanvas.height')
+        x = (idx) ? 30 : gElCanvas.height
+        gMeme.lines[idx].ycordinate = gElCanvas.height - x
+    }
+    else return
 }
-
-function setCordinates(idx){
-gMeme.lines[idx].xcordinate=(gElCanvas.width/2)-(gCtx.measureText(gMeme.lines[idx].txt).width*1.5)
-
-    // _getXcordinate(idx)
+function setCordinates(idx) {
+    gMeme.lines[idx].xcordinate = (gElCanvas.width / 2) - (gCtx.measureText(gMeme.lines[idx].txt).width * 1.5)
     _getYcordinate(idx)
-
 }
-function getLine(){
+function getLine() {
     return gMeme.lines[gMeme.selectedLineIdx].txt
 
 

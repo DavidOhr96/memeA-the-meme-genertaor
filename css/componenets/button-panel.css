@@ -2,33 +2,32 @@
     display: flex;
     flex-direction: column;
     width: 90vw;
-    max-width: 525px;
-    /* grid-column: 2; */
-    /* border: red solid 1px; */
+    max-width: 300px;
     align-self: center;
     margin-bottom: 100px;
     background-color: #383b42;
-    padding: 40px;
+    padding: 20px;
     border-radius: 30px;
 }
 
 button img {
     margin: auto;
-    /* width: 30px;
-    height: 26px; */
 }
+
 .button-set {
     display: flex;
     justify-content: space-around;
     margin: 15px;
 }
-.wraper{
-    width:100%;
+
+.wraper {
+    width: 100%;
     max-width: 445px;
     height: 151px;
     border-radius: 15px;
     background-color: #19a59f;
 }
+
 .button-set>* {
     width: 58px;
     height: 53px;
@@ -40,6 +39,7 @@ button img {
 .button-set>*:hover {
     cursor: pointer
 }
+
 .second>*,
 .third>* {
     box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
@@ -48,19 +48,20 @@ button img {
 }
 
 input[name="my-line"] {
-    width:100%;
-   max-width: 445px;
+    width: 100%;
+    max-width: 445px;
     height: 57px;
     box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
     border-radius: 28px;
-    font-size:  20px;
+    font-size: 20px;
 }
-.font-selector{
+
+.font-selector {
     width: 225px;
-height: 50px;
-box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
-border-radius: 10px;
-background-color: #ffffff;
+    height: 50px;
+    box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    border-radius: 10px;
+    background-color: #ffffff;
 }
 
 .add-line {
@@ -81,7 +82,6 @@ background-color: #ffffff;
 .change-line img {
     width: 39px;
     height: 28px;
-
 }
 
 
@@ -89,58 +89,62 @@ background-color: #ffffff;
 .delete-line {
     background-color: #d92d36;
     box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgba(255, 255, 255, 0.58);
-
 }
 
 .delete-line img {
     width: 28px;
     height: 32px;
-
-
-}
-.font-selector{
-    font-size:25px ;
 }
 
-.sticker{
-    font-size:20px;
+.font-selector {
+    font-size: 25px;
 }
-.fourth{
-    width:100%;
+
+.sticker {
+    font-size: 20px;
+}
+
+.fourth {
+    width: 100%;
     max-width: 445px;
-    margin:0px;
+    margin: 0px;
     margin-top: 10px;
     flex-wrap: wrap;
 }
-.fourth >*{
-    width:180px;
-max-width:90% ;
-height: 51px;
-align-content: center;
-justify-content: space-around;
-margin: 7px;
-display:flex
+
+.fourth>* {
+    width: 180px;
+    max-width: 90%;
+    height: 51px;
+    align-content: center;
+    justify-content: space-around;
+    margin: 7px;
+    display: flex
 }
-.share-on-FB{
-    background-color:#1e7cd3 ;
+
+.share-on-FB {
+    background-color: #1e7cd3;
     box-shadow: 1px 6px 0 #165c9c, inset 0 5px 0 #1c90c6;
 }
-.download{
-    background-color:#8f44bb ;
+
+.download {
+    background-color: #8f44bb;
     box-shadow: 1px 6px 0 #632687, inset 0 5px 0 #f5cef7;
 }
-.download >*{
+
+.download>* {
     align-self: center;
     max-height: 17px;
     max-width: 90px;
 }
-.upload{
+
+.upload {
 
     background-color: #009F8E;
     align-items: center;
     box-shadow: 1px 6px 0 #015f55, inset 0 5px 0 #86ddd4;
-
 }
+
 .sticker-container {
     display: flex;
     flex-wrap: wrap;

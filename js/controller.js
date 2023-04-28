@@ -3,15 +3,14 @@ function renderMeme() {
     loadMeme()
 }
 function onSetLineTxt() {
-    // elInput.value =''
+
     const elInput = document.querySelector('[name=my-line]')
     const str = elInput.value
 
     setLineTxt(str)
     renderMeme()
-    
-}
 
+}
 function onChangeFontSize(val) {
     changeFontSize(val)
     renderMeme()
@@ -26,15 +25,13 @@ function onChangeFillColor() {
     changeFillColor(color)
     renderMeme()
 }
-
 function onChangeLine() {
     switchLine()
     elInput = document.querySelector('[name=my-line]')
-    str=getLine()
-    elInput.value=(str==='Edit text')?'':str
+    str = getLine()
+    elInput.value = (str === 'Edit text') ? '' : str
     renderMeme()
 }
-
 function onMoveText(value) {
     moveText(value)
     renderMeme()
@@ -47,33 +44,31 @@ function onDeleteLine() {
     deleteLine()
     renderMeme()
 }
-function onChangeAlign(align){
+function onChangeAlign(align) {
     changeAlign(align)
     renderMeme()
 }
-function onChangeFont(){
-  const val=document.querySelector('select').value
-  changeFont(val)
-  renderMeme()
+function onChangeFont() {
+    const val = document.querySelector('select').value
+    changeFont(val)
+    renderMeme()
 }
+function renderStickers() {
+    const elStickerContainer = document.querySelector('.sticker-container')
+    const stickers = getStickers()
 
-function renderStickers(){
-    const elStickerContainer=document.querySelector('.sticker-container')
-    const stickers=getStickers()
-    
-    let HTMLstr=stickers.map((sticker,idx)=>{
+    let HTMLstr = stickers.map((sticker, idx) => {
         return `<div class=sticker onclick=onAddSticker(${idx})> ${sticker}</div>`
     }).join('')
-elStickerContainer.innerHTML=HTMLstr
+    elStickerContainer.innerHTML = HTMLstr
 }
-function onAddSticker(idx){
+function onAddSticker(idx) {
     addSticker(idx)
     renderMeme()
 }
-function onDownload(elLink){
+function onDownload(elLink) {
     downloadImg(elLink)
 }
-
 function onToggleMenu() {
     document.body.classList.toggle('menu-open');
 }
