@@ -1,4 +1,11 @@
 'use service'
+function onInit() {
+    initCanvas()
+    addListeners()
+    renderGallery()
+    renderMeme()
+    renderStickers()
+}
 function renderMeme() {
     loadMeme()
 }
@@ -27,9 +34,7 @@ function onChangeFillColor() {
 }
 function onChangeLine() {
     switchLine()
-    elInput = document.querySelector('[name=my-line]')
-    str = getLine()
-    elInput.value = (str === 'Edit text') ? '' : str
+    setStrForInputBox()
     renderMeme()
 }
 function onMoveText(value) {
@@ -58,7 +63,7 @@ function renderStickers() {
     const stickers = getStickers()
 
     let HTMLstr = stickers.map((sticker, idx) => {
-        return `<div class=sticker onclick=onAddSticker(${idx})> ${sticker}</div>`
+        return `<div class="sticker" onclick=onAddSticker(${idx})> ${sticker}</div>`
     }).join('')
     elStickerContainer.innerHTML = HTMLstr
 }
@@ -71,4 +76,23 @@ function onDownload(elLink) {
 }
 function onToggleMenu() {
     document.body.classList.toggle('menu-open');
+}
+function setStrForInputBox(){
+    elInput = document.querySelector('[name=my-line]')
+    str = getLine()
+    elInput.value = (str === 'Edit text') ? '' : str
+}
+function onOpenGallery(isLogo){
+    document.querySelector('.gallery').style.display='flex'
+    document.querySelector('main').style.display='none'
+    document.querySelector('.about').style.display='none'
+    if(!isLogo)document.body.classList.toggle('menu-open');
+    window.scrollTo(0,0); 
+}
+function onOpenAbout(){
+    document.querySelector('.gallery').style.display='none'
+    document.querySelector('main').style.display='none'
+    document.querySelector('.about').style.display='grid'
+    document.body.classList.toggle('menu-open');
+    window.scrollTo(0,0); 
 }

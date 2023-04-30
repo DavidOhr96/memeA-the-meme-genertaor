@@ -11,7 +11,7 @@ body {
 
 header {
     grid-column: 1/-1;
-    width: auto;
+    width:100vw;
     height: 73px;
     background-color: #5970c1;
     background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
@@ -24,4 +24,38 @@ main {
     grid-column: 2;
     justify-self: center;
     align-self: center;
+}
+.about{
+    /* display: grid; */
+    grid-template-columns: 30% 70%;
+    grid-column:2;
+    padding:20px;
+    background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
+    border-radius: 30px;
+    text-align: left;
+    width: 80%;
+    align-self: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+    color: #22252c;
+    margin:auto;
+    display: none;
+}
+.about h3{
+    grid-column: 1/-1;
+    text-align: center;
+    /* transform: translate(-10%); */
+}
+.about img{
+    display: none;
+    border-radius: 50%;
+    grid-column: 1;
+    grid-row: 2;
+margin: auto;
+}
+.about p{
+    grid-column:1/-1 ;
+    position: relative;
+    bottom: 0px;
+
 }

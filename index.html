@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <title>memeA-the meme generator</title>
 </head>
+
 <body onload="onInit()">
     <div class="main-screen" onclick="onToggleMenu()"></div>
     <header>
-        <img class="logo" src="icons/memeAlogo.jpg">
+        <img class="logo" onclick="onOpenGallery(true)" src="icons/memeAlogo.jpg">
         <img onclick="onToggleMenu()" class="hamburger" src="icons/menu-icon.svg">
         <span></span>
         <nav class="main-nav-container">
             <ul class="main-nav flex clean-list">
-                <li>Gallery</li>
-                <li>My memes</li>
-                <li>About</li>
+                <li onclick="onOpenGallery(false)">Gallery</li>
+                <!-- <li>My memes</li> -->
+                <li onclick="onOpenAbout()">About</li>
             </ul>
         </nav>
     </header>
@@ -53,7 +55,8 @@
             </div>
             <div class="sticker-container"></div>
             <div class="fourth button-set">
-                <button class="share-on-FB" onclick="onUploadImg()"><img src=icons/Share.png><img src=icons/Forme_7.png></button>
+                <button class="share-on-FB" onclick="onUploadImg()"><img src=icons/Share.png><img
+                        src=icons/Forme_7.png></button>
                 <a href="#" id="upload" class="download" onclick="onDownload(this)" download="my-img.jpg"><img
                         src=icons/Download.png><img src=icons/Forme_8.png> </a>
                 <input type="file" class="upload" name="image" onchange="onImgInput(event)" />
@@ -61,11 +64,39 @@
         </div>
     </main>
     <div class="gallery">
-        <div class="search-bar-conatiner">
-            <input placeholder="Search" class="search-bar" type="text">
+        <div class="hero">
+            <h3> Get ready to laugh out loud with our extensive collection of customizable memes!</h3>
+            Whether you're looking to brighten up your day or share a good chuckle with friends and family, our meme
+            designing web site has got you covered.</br>
+            With no sign-up required, you can browse our hilarious selection, download your favorites, and start sharing
+            the fun with anyone and everyone.</br>
+            So why wait? Get ready to unleash your inner comedian and start having fun
+            with our memes today!
         </div>
+        <!-- <div class="search-bar-conatiner"> -->
+        <!-- <input placeholder="Search" class="search-bar" type="text"> -->
+        <!-- </div> -->
         <span></span>
     </div>
+    <section class="about">
+       <h3> Welcome to our meme designing website, created by the talented David Ohr!</h3>
+
+       <p> Our site is dedicated to providing you with the tools and resources you need to create hilarious and shareable
+        memes. With a user-friendly design and a wide variety of templates, images, and captions to choose from, you'll
+        be able to make memes that will have your friends and followers laughing out loud.
+
+       </br></br>
+       David Ohr, our founder and lead developer, has always had a passion for humor and creativity. He recognized the
+        power of memes to bring people together and decided to create a platform where anyone could easily make their
+        own. With his expertise in coding and design, David has brought our site to life and made it a go-to destination
+        for meme lovers everywhere.
+    </br></br>
+  Whether you're looking to make a meme to express your thoughts on a trending topic or just want to make your
+        friends laugh, our site has everything you need. So why wait? Start designing your own memes today and join the
+        millions of people who have discovered the joy of meme-making on our site.</p>
+<img src="icons/me.jpg">
+
+    </section>
 
     <!---------------------- scripts --------------------------------->
 

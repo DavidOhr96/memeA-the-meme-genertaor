@@ -6,11 +6,12 @@
     align-items: center;
     justify-content: center;
     width: 90vw;
-    max-width: 400px;
+    max-width: 350px;
     margin: 0px 10px 20px;
     align-self: center;
 }
 
 canvas {
     border-radius: 30px;
+    border: 5px solid black;
 }
